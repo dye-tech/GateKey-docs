@@ -55,12 +55,14 @@ Integrate with your existing identity provider:
 
 Choose the VPN protocol that fits your needs:
 
-| Protocol | Best For | Performance |
-|----------|----------|-------------|
-| **OpenVPN** | Maximum compatibility | Good |
-| **WireGuard** | Performance, mobile | Excellent |
+| Protocol | Best For | Performance | FIPS 140-3 Compliant |
+|----------|----------|-------------|----------------------|
+| **OpenVPN** | Maximum compatibility, regulatory environments | Good | Yes |
+| **WireGuard** | Performance, mobile | Excellent | No |
 
 Both protocols use the same zero-trust security model.
+
+**Compliance Note:** For organizations requiring FIPS 140-3 compliance (government, healthcare, finance), use OpenVPN with FIPS-validated cryptographic modules. GateKey's OpenVPN implementation supports AES-256-GCM and SHA-384 for FIPS-compliant deployments.
 
 ### 🔗 Multi-Gateway
 
