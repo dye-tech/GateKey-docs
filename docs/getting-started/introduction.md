@@ -12,6 +12,13 @@ GateKey is a **zero-trust VPN solution** that wraps OpenVPN and WireGuard. Users
 
 ![GateKey Interface](/img/screenshots/screenshot_full.png)
 
+## Overview Video
+
+<video controls width="100%">
+  <source src="/video/overview.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
 ## Why GateKey?
 
 Traditional VPNs have fundamental security issues:
