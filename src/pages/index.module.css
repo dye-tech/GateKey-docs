@@ -1,0 +1,261 @@
+.heroBanner {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.buttons .button--secondary {
+  background: white;
+  color: #1e3a8a;
+}
+
+.buttons .button--outline {
+  border-color: white;
+  color: white;
+}
+
+.installCommand {
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.installCommand code {
+  color: #93c5fd;
+  background: transparent;
+  font-size: 0.9rem;
+}
+
+.features {
+  padding: 4rem 0;
+  background: var(--ifm-background-surface-color);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.quickStart {
+  padding: 4rem 0;
+}
+
+.quickStartSubtitle {
+  color: var(--ifm-color-secondary-dark);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.architecture {
+  padding: 4rem 0;
+  background: var(--ifm-background-surface-color);
+  text-align: center;
+}
+
+.architectureSubtitle {
+  color: var(--ifm-color-secondary-dark);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.resources {
+  padding: 4rem 0;
+}
+
+.resourceCard {
+  display: block;
+  padding: 1.5rem;
+  background: var(--ifm-card-background-color);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.resourceCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  text-decoration: none;
+}
+
+.resourceCard h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.resourceCard p {
+  margin: 0;
+  color: var(--ifm-color-secondary-darkest);
+  font-size: 0.9rem;
+}
+
+.resourceIcon {
+  font-size: 2rem;
+}
+
+/* CLI Demo Section */
+.cliDemo {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, var(--ifm-background-color) 0%, var(--ifm-background-surface-color) 100%);
+  text-align: center;
+}
+
+.cliDemoSubtitle {
+  color: var(--ifm-color-secondary-dark);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.terminalWrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.terminalHeader {
+  background: linear-gradient(180deg, #3d3d3d 0%, #2d2d2d 100%);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.terminalButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminalButtonRed,
+.terminalButtonYellow,
+.terminalButtonGreen {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminalButtonRed {
+  background: #ff5f56;
+}
+
+.terminalButtonYellow {
+  background: #ffbd2e;
+}
+
+.terminalButtonGreen {
+  background: #27ca40;
+}
+
+.terminalTitle {
+  color: #9ca3af;
+  font-size: 13px;
+  flex: 1;
+  text-align: center;
+  margin-right: 60px;
+}
+
+.terminalBody {
+  background: #1a1b26;
+  padding: 20px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Menlo', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  min-height: 400px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.terminalLine {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminalPromptUser {
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.terminalPromptAt {
+  color: #94a3b8;
+}
+
+.terminalPromptArrow {
+  color: #34d399;
+  font-weight: bold;
+}
+
+.terminalCommand {
+  color: #f8fafc;
+}
+
+.terminalOutput {
+  color: #cbd5e1;
+}
+
+.terminalSuccess {
+  color: #34d399;
+}
+
+.terminalDim {
+  color: #64748b;
+}
+
+.terminalCursor {
+  color: #60a5fa;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Architecture SVG */
+.architectureDiagram {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.architectureSvg {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .terminalBody {
+    font-size: 11px;
+    min-height: 300px;
+  }
+
+  .architectureDiagram {
+    overflow-x: auto;
+  }
+
+  .architectureSvg {
+    min-width: 600px;
+  }
+}
