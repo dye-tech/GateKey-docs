@@ -80,15 +80,34 @@ WantedBy=multi-user.target
 
 ### Docker
 
+:::info Architecture Change in v1.5.0
+The server image is now API-only. The web UI is served separately via `gatekey-web`. For production deployments, run both containers.
+:::
+
+**API Server:**
+
 ```bash
 docker run -d \
   --name gatekey-server \
   -p 8080:8080 \
   -e DATABASE_URL="postgres://..." \
+  -e GATEKEY_ADMIN_PASSWORD="your-secure-password" \
   dyetech/gatekey-server:latest
 ```
 
+**Web UI:**
+
+```bash
+docker run -d \
+  --name gatekey-web \
+  -p 80:80 \
+  -e API_URL="http://gatekey-server:8080" \
+  dyetech/gatekey-web:latest
+```
+
 ## Reverse Proxy (nginx)
+
+When running `gatekey-server` and `gatekey-web` as separate containers:
 
 ```nginx
 server {
@@ -98,19 +117,31 @@ server {
     ssl_certificate /etc/letsencrypt/live/vpn.example.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/vpn.example.com/privkey.pem;
 
-    # Frontend
+    # Web UI (served by gatekey-web container)
     location / {
-        root /var/www/gatekey;
-        try_files $uri $uri/ /index.html;
+        proxy_pass http://127.0.0.1:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    # API
+    # API (served by gatekey-server container)
     location /api {
         proxy_pass http://127.0.0.1:8080;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Health and metrics endpoints
+    location /health {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /metrics {
+        proxy_pass http://127.0.0.1:8080;
     }
 }
 ```

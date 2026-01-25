@@ -292,12 +292,34 @@ gatekey-admin login --server https://vpn.yourcompany.com
 
 ## Docker Images
 
+All Docker images are available on Docker Hub under the `dyetech` organization.
+
+### Core Components
+
 | Image | Description |
 |-------|-------------|
-| `dyetech/gatekey-server` | Control plane (API + embedded CA) |
+| `dyetech/gatekey-server` | Control plane API server (API + embedded CA) |
 | `dyetech/gatekey-web` | Web UI (nginx + React) |
+
+### OpenVPN Components
+
+| Image | Description |
+|-------|-------------|
+| `dyetech/gatekey-gateway` | OpenVPN gateway agent |
+| `dyetech/gatekey-hub` | OpenVPN mesh hub server |
+| `dyetech/gatekey-mesh-gateway` | OpenVPN mesh spoke gateway |
+
+### WireGuard Components
+
+| Image | Description |
+|-------|-------------|
 | `dyetech/gatekey-wireguard-gateway` | WireGuard gateway agent |
-| `dyetech/gatekey-wireguard-hub` | WireGuard mesh hub |
+| `dyetech/gatekey-wireguard-hub` | WireGuard mesh hub server |
+| `dyetech/gatekey-wireguard-mesh-gateway` | WireGuard mesh spoke gateway |
+
+:::info Architecture Note
+Since v1.5.0, the server image (`gatekey-server`) is API-only. The web UI is served separately via `gatekey-web`. This separation allows for better scaling and security isolation.
+:::
 
 ## Next Steps
 

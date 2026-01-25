@@ -162,23 +162,12 @@ You can either:
 - Use the **CLI commands** shown on the right (recommended)
 - Download a **manual configuration** file for your VPN client
 
-## Video Demos
+## Video Demo
 
-### CLI Demo
-
-Watch the GateKey CLI in action:
+Watch a complete walkthrough of GateKey features:
 
 <video controls width="100%">
-  <source src="/video/demo_cli.webm" type="video/webm" />
-  Your browser does not support the video tag.
-</video>
-
-### Full Overview
-
-See a complete walkthrough of GateKey features:
-
-<video controls width="100%">
-  <source src="/video/full_overview.webm" type="video/webm" />
+  <source src="/video/overview.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
