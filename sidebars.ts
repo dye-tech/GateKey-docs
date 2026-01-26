@@ -56,6 +56,7 @@ const sidebars: SidebarsConfig = {
       label: 'Deployment',
       items: [
         'deployment/kubernetes',
+        'deployment/kubernetes-security',
       ],
     },
     {
