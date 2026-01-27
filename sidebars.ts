@@ -61,6 +61,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Reference',
+      items: [
+        'reference/configuration',
+      ],
+    },
+    {
+      type: 'category',
       label: 'API Reference',
       items: [
         'api/overview',
