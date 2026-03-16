@@ -130,6 +130,54 @@ API endpoints are rate-limited to prevent abuse:
 | `/gateway/client-rules` | POST | Get client access rules |
 | `/gateway/all-rules` | POST | Get all rules for refresh |
 
+### JIT Access — User Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/jit/resources` | GET | Browse requestable resources |
+| `/jit/requests` | POST | Create access request |
+| `/jit/requests` | GET | List my requests |
+| `/jit/requests/:id/cancel` | POST | Cancel pending request |
+| `/jit/grants` | GET | List my active grants |
+
+### JIT Access — Admin Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/admin/jit/requests` | GET | List all JIT requests |
+| `/admin/jit/requests/:id/approve` | POST | Approve request |
+| `/admin/jit/requests/:id/deny` | POST | Deny request |
+| `/admin/jit/grants/:id/revoke` | POST | Revoke active grant |
+| `/admin/jit/stats` | GET | Basic JIT stats |
+| `/admin/jit/stats/detailed` | GET | Detailed analytics |
+| `/admin/jit/policies` | GET/POST/PUT/DELETE | Policy CRUD |
+
+### Session Recording Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/admin/recordings` | GET | List recordings |
+| `/admin/recordings/:id` | GET | Get recording metadata |
+| `/admin/recordings/:id/stream` | GET | Stream asciicast data |
+| `/admin/recordings/:id` | DELETE | Delete recording |
+| `/admin/recordings/settings` | GET/PUT | Recording settings |
+
+### Proxy Access Log Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/admin/proxy-logs` | GET | List proxy access logs |
+
+### Network Flow Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/gateway/flow-report` | POST | Gateway agent flow report |
+| `/admin/flow-logs` | GET | List flow logs |
+| `/admin/flow-logs/stats` | GET | Aggregate statistics |
+| `/admin/flow-logs/top-destinations` | GET | Top destinations |
+| `/admin/flow-logs/user/:userId` | GET | Per-user activity |
+
 ### PKI Endpoints
 
 | Endpoint | Method | Description |

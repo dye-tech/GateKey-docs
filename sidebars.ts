@@ -20,6 +20,7 @@ const sidebars: SidebarsConfig = {
         'user-guide/web-ui',
         'user-guide/multi-gateway',
         'user-guide/mesh-networking',
+        'user-guide/client-android',
         'user-guide/troubleshooting',
       ],
     },
@@ -35,6 +36,8 @@ const sidebars: SidebarsConfig = {
         'admin-guide/geo-fencing',
         'admin-guide/admin-cli',
         'admin-guide/monitoring',
+        'admin-guide/jit-access',
+        'admin-guide/session-recording',
       ],
     },
     {
